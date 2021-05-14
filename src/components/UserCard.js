@@ -41,7 +41,9 @@ const UserCard = () => {
             {user.location.country} - {user.location.city}
           </div>
           <p id="age">Age: {user.dob.age}</p>
-          <p id="register">Register Date: {user.registered.date}</p>
+          <p id="register">
+            Register Date: {user.registered.date.substring(0, 10)}
+          </p>
         </div>
       ))}
       <button id="btn" onClick={getData}>
