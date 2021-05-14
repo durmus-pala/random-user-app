@@ -10,7 +10,6 @@ const UserCard = () => {
 
   const getData = () => {
     axios.get("https://randomuser.me/api/").then((res) => {
-      console.log(res.data.results);
       setUserList(res.data.results);
     });
   };
