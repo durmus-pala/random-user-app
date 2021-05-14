@@ -3,6 +3,7 @@ import email from "./images/email.svg";
 import location from "./images/location.svg";
 import phone from "./images/phone.svg";
 import axios from "axios";
+import "./UserCard.css";
 
 const UserCard = () => {
   const [userList, setUserList] = useState();
@@ -22,26 +23,31 @@ const UserCard = () => {
       {userList?.map((user, index) => (
         <div key={index}>
           <div>
-            <img src={user.picture.large} alt="" />
+            <img id="profil-photo" src={user.picture.large} alt="" />
             {user.name.first} {user.name.last}
           </div>
+          <br />
           <div>
-            <img src={email} alt="" />
+            <img className="icon" src={email} alt="" />
             {user.email}
           </div>
+          <br />
           <div>
-            <img src={phone} alt="" />
+            <img className="icon" src={phone} alt="" />
             {user.phone}
           </div>
+          <br />
           <div>
-            <img src={location} alt="" />
+            <img className="icon" src={location} alt="" />
             {user.location.country} - {user.location.city}
           </div>
-          <p>Age: {user.dob.age}</p>
-          <p>Register Date: {user.registered.date}</p>
+          <p id="age">Age: {user.dob.age}</p>
+          <p id="register">Register Date: {user.registered.date}</p>
         </div>
       ))}
-      <button onClick={getData}>Random User</button>
+      <button id="btn" onClick={getData}>
+        Random User
+      </button>
     </div>
   );
 };
